@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/site.webmanifest" />
+    <title>Google Converter</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <section class="brand">
+        <button class="menu">
+          <span class="material-symbols-outlined"> menu </span>
+        </button>
+        <div class="title">
+          <img
+            src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+            alt="Google"
+          />
+          Converter
+        </div>
+      </section>
+      <section class="nav-header">
+        <button class="btn-icon">
+          <span class="material-symbols-outlined"> settings </span>
+        </button>
+        <button class="btn-icon">
+          <span class="material-symbols-outlined"> apps </span>
+        </button>
+        <button class="btn-icon" style="padding: 4px">
+          <img
+            src="assets/myprofile.png"
+            width="30"
+            height="30"
+            alt="Profil"
+            style="border-radius: 50%"
+          />
+        </button>
+      </section>
+    </header>
+    <main>
+      <section class="main-nav">
+        <button class="btn-nav active">
+          <span class="material-symbols-outlined"> translate </span> Teks
+        </button>
+        <button class="btn-nav">
+          <span class="material-symbols-outlined"> image </span> Gambar
+        </button>
+        <button class="btn-nav">
+          <span class="material-symbols-outlined"> draft </span> Dokumen
+        </button>
+        <button class="btn-nav">
+          <span class="material-symbols-outlined"> web </span> Situs
+        </button>
+      </section>
+      <section class="main-select">
+        <div class="left-select">
+          <button id="mobileLeftSelectBtn" class="btn-select active">
+            Text
+          </button>
+          <button class="btn-select">Deteksi bahasa</button>
+          <button name="left-btn" class="btn-select active">Text</button>
+          <button name="left-btn" class="btn-select">Binary</button>
+          <button name="left-btn" class="btn-select">Decimal</button>
+          <button id="leftExpandBtn" class="btn-icon">
+            <span class="material-symbols-outlined"> expand_more </span>
+          </button>
+        </div>
+
+        <button id="reverseValue" class="btn-icon">
+          <span class="material-symbols-outlined"> swap_horiz </span>
+        </button>
+
+        <div class="right-select">
+          <button id="mobileRightSelectBtn" class="btn-select active">
+            Binary
+          </button>
+          <button name="right-btn" class="btn-select active">Binary</button>
+          <button name="right-btn" class="btn-select">Text</button>
+          <button name="right-btn" class="btn-select">Decimal</button>
+          <button id="rightExpandBtn" class="btn-icon">
+            <span class="material-symbols-outlined"> expand_more </span>
+          </button>
+        </div>
+      </section>
+      <section class="main-area">
+        <div class="select-area hidden">
+          <div class="search">
+            <button class="btn-icon">
+              <span class="material-symbols-outlined"> arrow_back </span>
+            </button>
+            <input type="text" placeholder="Telusuri bahasa" />
+          </div>
+          <div class="select-grid">
+            <div class="grid-item">
+              <p>Text</p>
+            </div>
+            <div class="grid-item">
+              <p>Binary</p>
+            </div>
+            <div class="grid-item">
+              <p>Decimal</p>
+            </div>
+            <div class="grid-item">
+              <p>Hexadecimal</p>
+            </div>
+            <div class="grid-item">
+              <p>Octal</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-area">
+          <div class="flex items-start">
+            <textarea
+              name="inputTxt"
+              id="inputTxt"
+              placeholder="Masukkan teks"
+            ></textarea>
+            <button id="clearInput" class="btn-icon hidden">
+              <span class="material-symbols-outlined"> close </span>
+            </button>
+          </div>
+          <div class="main-area-footer">
+            <div class="flex items-center">
+              <button class="btn-icon">
+                <span class="material-symbols-outlined"> mic </span>
+              </button>
+              <button id="volume1" class="btn-icon hidden">
+                <span class="material-symbols-outlined"> volume_up </span>
+              </button>
+            </div>
+            <p id="letter">0 / 1000</p>
+          </div>
+        </div>
+        <div class="output-area">
+          <div class="flex items-start">
+            <p id="output">Terjemahan</p>
+            <button id="saveOutput" class="btn-icon hidden">
+              <span class="material-symbols-outlined"> star </span>
+            </button>
+          </div>
+          <div id="action" class="output-actions hidden">
+            <button class="btn-icon">
+              <span class="material-symbols-outlined"> volume_up </span>
+            </button>
+            <div class="flex">
+              <button id="copyOutput" class="btn-icon">
+                <span class="material-symbols-outlined"> content_copy </span>
+              </button>
+              <button class="btn-icon">
+                <span class="material-symbols-outlined"> thumbs_up_down </span>
+              </button>
+              <button class="btn-icon">
+                <span class="material-symbols-outlined"> share </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <button>
+        <div class="btn-footer">
+          <span class="material-symbols-outlined"> history </span>
+        </div>
+        <p>History</p>
+      </button>
+      <button>
+        <div class="btn-footer">
+          <span class="material-symbols-outlined"> star </span>
+        </div>
+        <p>Tersimpan</p>
+      </button>
+      <button id="contribution">
+        <div class="btn-footer">
+          <span class="material-symbols-outlined"> group </span>
+        </div>
+        <p>Beri kontribusi</p>
+      </button>
+    </footer>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
