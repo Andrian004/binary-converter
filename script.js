@@ -88,6 +88,9 @@ copyOutputBtn.addEventListener("click", () => {
 // Expand select area start --------------------------------------------------------------------
 const leftExpandBtn = document.getElementById("leftExpandBtn");
 const rightExpandBtn = document.getElementById("rightExpandBtn");
+const mobileLeftSelectBtn = document.getElementById("mobileLeftSelectBtn");
+const mobileRightSelectBtn = document.getElementById("mobileRightSelectBtn");
+const closeSelectElementBtn = document.getElementById("closeSelectElementBtn");
 const mainArea = document.querySelector(".main-area");
 const selectArea = document.querySelector(".main-area .select-area");
 const gridItems = document.querySelectorAll(".grid-item");
@@ -180,11 +183,53 @@ rightExpandBtn.addEventListener("click", () => {
   });
 });
 
+mobileLeftSelectBtn.addEventListener("click", () => {
+  expandElement(toggleLeft, leftExpandBtn);
+
+  if (toggleLeft) {
+    rightExpandBtn.removeAttribute("disabled", false);
+    toggleLeft = false;
+  } else {
+    rightExpandBtn.setAttribute("disabled", true);
+    toggleLeft = true;
+  }
+
+  resetGridItemStyle();
+
+  gridItems.forEach((e) => {
+    if (e.firstElementChild.innerText === object.selectedLeftItem)
+      setActiveGridItem(e);
+  });
+});
+
+mobileRightSelectBtn.addEventListener("click", () => {
+  expandElement(toggleRight, rightExpandBtn);
+
+  if (toggleRight) {
+    leftExpandBtn.removeAttribute("disabled", false);
+    toggleRight = false;
+  } else {
+    leftExpandBtn.setAttribute("disabled", true);
+    toggleRight = true;
+  }
+
+  resetGridItemStyle();
+
+  gridItems.forEach((e) => {
+    if (e.firstElementChild.innerText === object.selectedRightItem)
+      setActiveGridItem(e);
+  });
+});
+
+closeSelectElementBtn.addEventListener("click", () => closeSelectElement());
+
 document.addEventListener("click", (e) => {
   if (
     !leftExpandBtn.contains(e.target) &&
     !rightExpandBtn.contains(e.target) &&
-    !selectArea.contains(e.target)
+    !selectArea.contains(e.target) &&
+    !mobileLeftSelectBtn.contains(e.target) &&
+    !mobileRightSelectBtn.contains(e.target)
   ) {
     closeSelectElement();
   }
@@ -220,6 +265,7 @@ const updateLeftItems = (value) => {
     currLeftItems.pop();
     currLeftItems.unshift(value);
   }
+  mobileLeftSelectBtn.innerText = value;
 };
 
 const updateRightItems = (value) => {
@@ -227,6 +273,7 @@ const updateRightItems = (value) => {
     currRightItems.pop();
     currRightItems.unshift(value);
   }
+  mobileRightSelectBtn.innerText = value;
 };
 
 leftListBtn.forEach((btn) => {
