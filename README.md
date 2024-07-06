@@ -45,3 +45,11 @@ Locally preview production build:
 # pnpm
 pnpm preview
 ```
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](https://github.com/Andrian004/binary-converter/blob/main/README.md)].
+
+[![Code Contributors](https://contrib.rocks/image?repo=Andrian004/binary-converter)](https://github.com/Andrian004/binary-converter/graphs/contributors)
